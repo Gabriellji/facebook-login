@@ -2,7 +2,7 @@ import { accountService } from '../_services/account.service';
 
 const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID;
 
-function initFacebookSdk() {
+const initFacebookSdk = () => {
     return new Promise(resolve => {
         // wait for facebook sdk to initialize before starting the react app
         window.fbAsyncInit = function () {

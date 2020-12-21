@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { accountService } from '../_services/account.service';
 
-function EditAccount({ history, match }) {
+const EditAccount = ({ history, match }) => {
     const { id } = match.params;
 
     // functions to build form returned by useForm() hook
@@ -22,7 +22,7 @@ function EditAccount({ history, match }) {
 
     // form submit handler
     const [error, setError] = useState('');
-    function onSubmit(data) {
+    const onSubmit = (data) => {
         return accountService.update(id, data)
             .then(() => history.push('..'))
             .catch(err => setError(err));

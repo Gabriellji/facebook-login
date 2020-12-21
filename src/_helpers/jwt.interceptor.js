@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { accountService } from '../_services/account.service';
 
-function jwtInterceptor() {
+const jwtInterceptor = () => {
     axios.interceptors.request.use(request => {
         // add auth header with jwt if account is logged in and request is to the api url
         const account = accountService.accountValue;

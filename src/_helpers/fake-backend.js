@@ -10,7 +10,7 @@ const fakeBackend = () => {
     const methods = ['get', 'post', 'put', 'delete'];
     methods.forEach(method => {
         axios[`original${method}`] = axios[method];
-        axios[method] = function (url, ...params) {
+        axios[method] = (url, ...params) => {
             return new Promise((resolve, reject) => {
                 return handleRoute();
 

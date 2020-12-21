@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { accountService } from '../_services/account.service';
 
-function Nav() {
+const Nav = () => {
     const [account, setAccount] = useState(null);
     useEffect(() => {
         accountService.account.subscribe(x => setAccount(x));

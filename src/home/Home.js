@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { accountService } from '../_services/account.service';
 
-function Home() {
+const Home = () => {
     const [mounted, setMounted] = useState(false);
     const [accounts, setAccounts] = useState(null);
     useEffect(() => {
@@ -13,7 +13,7 @@ function Home() {
         return () => setMounted(false);
     }, []);
 
-    function deleteAccount(id) {
+    const deleteAccount = (id) => {
         // set isDeleting flag to show spinner
         setAccounts(accounts.map(x => {
             if (x.id === id) { x.isDeleting = true; }

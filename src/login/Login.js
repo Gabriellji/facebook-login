@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { accountService } from '../_services/account.service';
+import { accountService } from '../_services/account.service'; 
 
-function Login({ history }) {
+const Login = ({ history }) => {
     useEffect(() => {
         // redirect to home if already logged in
         if (accountService.accountValue) {

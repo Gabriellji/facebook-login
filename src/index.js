@@ -22,7 +22,7 @@ errorInterceptor();
 // wait for facebook sdk before startup
 initFacebookSdk().then(startApp);
 
-function startApp() { 
+const startApp = () => { 
     render(
         <Router history={history}>
             <App />
